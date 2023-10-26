@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import sse from '$lib/stores/sse';
+</script>
+
+<h1>SSE Example</h1>
+
+<ol>
+	{#each $sse as message (message)}
+		<li>{message.text}</li>
+	{/each}
+</ol>
